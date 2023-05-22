@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CLIVES CONVERSION CALCULATOR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand text-light">Clives conversion calculator</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            Home
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href=" " class="nav-link">
+            Profile
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="" class="nav-link">
+            Contact Us
+        </a>
+    </li>
+</ul>
+    </nav>
+
+
+
+<div class="container container1 form-control">
+    <h1 class="text-center">Unit Converter</h1>
+    <div class="row row1">
+        <label>
+            <h3>Select Measurement</h3>
+        </label>
+        <select onchange="updateConversion();" class="form-select form-select-lg" aria-label=".form-select-lg example">
+            <option value="#" selected>Length</option>
+        </select>
+    </div>
+    <div class="row align-items-center row2">
+        <div class="col-md-5">
+            <label for="">
+                Type Desired Value
+            </label>
+            <input type="number" class="form-control" name="millimeter" id="millimeter" placeholder="Millimeter" oninput="updateConversion();">
+        </div>
+        <div class="col-md-2 col2">
+            <h1 class="text-center">=</h1>
+        </div>
+        <div class="col-md-5">
+            <label for="">
+                The Converted Value is :
+            </label>
+            <input type="number" class="form-control" name="output" id="output" disabled>
+        </div>
+    </div>
+    <div class="row align-items-center row3">
+        <div class="col-md-4">
+            <button class="btn" onclick="convertToCentimeters();">Convert to Centimeters</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn" onclick="convertToMeters();">Convert to Meters</button>
+        </div>
+        <div class="col-md-4">
+            <button class="btn" onclick="convertToKilometers();">Convert to Kilometers</button>
+        </div>
+    </div>
+</div>
+<script src="js/bootstrap.bundle.js"></script>
+<script>
+    function updateConversion() {
+        var millimeter = document.getElementById("millimeter").value;
+        convertToCentimeters(millimeter);
+    }
+
+    function convertToCentimeters(millimeter) {
+        var centimeters = millimeter / 10;
+        document.getElementById("output").value = centimeters;
+    }
+
+    function convertToMeters() {
+        var millimeter = document.getElementById("millimeter").value;
+        var meters = millimeter / 1000;
+        document.getElementById("output").value = meters;
+    }
+
+    function convertToKilometers() {
+        var millimeter = document.getElementById("millimeter").value;
+        var kilometers = millimeter / 1000000;
+        document.getElementById("output").value = kilometers;
+    }
+</script>
+</body>
+</html>
